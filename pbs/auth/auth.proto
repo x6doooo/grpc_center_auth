@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc_center.auth";
+option java_outer_classname = "Auth";
+
+
+service Auth {
+    rpc Signup(SignupOrLoginRequest) returns (AuthResponse) {}
+    rpc Login(SignupOrLoginRequest) returns (AuthResponse) {}
+    rpc Update(UpdateRequest) returns (AuthResponse) {}
+}
+
+message SignupOrLoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message AuthResponse {
+    uint64 userId = 1;
+}
+
+message UpdateRequest {
+    string username = 1;
+    string oldPassword = 2;
+    string newPassword = 3;
+}
+
+

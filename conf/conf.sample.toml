@@ -1,0 +1,23 @@
+[env]
+mode = "debug"
+
+[log]
+file = "/var/log/grpc.log"
+max_line = 10000
+backupts = 9
+
+[mysql]
+username = "root"
+password = ""
+addr = "tcp(localhost:3306)"
+db_name = "grpc_center"
+max_conns = 200
+max_idle = 100
+
+[pswd]
+key = "abcdefghijklmmo501h345a789t12u45"
+iv = "abc1efghigklmnop"
+salt = "Hi,GrpcAuth!"
+
+[server]
+addr = ":50089"
